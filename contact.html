@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sphoorthi Malladad</title>
+    <meta name="description" content="Get in touch with Sphoorthi Malladad for opportunities, collaborations, or professional inquiries.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Sphoorthi Malladad</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2>Let's Connect!</h2>
+                <p style="text-align: center; font-size: 1.2rem; color: #6B7280; margin-bottom: 3rem;">
+                    Feel free to reach out on LinkedIn or explore my work.
+                </p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-links">
+                            <a href="mailto:smallada@iu.edu" class="contact-link">
+                                <div style="font-size: 1.5rem;">📧</div>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>smallada@iu.edu</p>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/sphoorthi-s-malladad" class="contact-link" target="_blank" rel="noopener noreferrer">
+                                <div style="font-size: 1.5rem;">💼</div>
+                                <div>
+                                    <strong>LinkedIn</strong>
+                                    <p>Connect with me professionally</p>
+                                </div>
+                            </a>
+                            
+                            <a href="https://github.com/smallada06/PersonalWebsite" class="contact-link" target="_blank" rel="noopener noreferrer">
+                                <div style="font-size: 1.5rem;">💻</div>
+                                <div>
+                                    <strong>GitHub</strong>
+                                    <p>Explore my code and projects</p>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div style="margin-top: 2rem;">
+                            <h4>Response Time</h4>
+                            <p style="color: #6B7280;">I typically respond to emails within 24-48 hours. For urgent matters, please connect with me on LinkedIn.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Send me a message</h3>
+                        <form action="thankyou.html" method="GET" novalidate>
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Password *</label>
+                                <input type="password" id="password" name="password" minlength="8" required>
+                                <small style="color: #6B7280; font-size: 0.875rem;">Minimum 8 characters required</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password *</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, opportunity, or just say hello!"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sphoorthi Malladad – All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form validation for password confirmation
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            
+            function validatePassword() {
+                if (password.value !== confirmPassword.value) {
+                    confirmPassword.setCustomValidity('Passwords do not match');
+                } else {
+                    confirmPassword.setCustomValidity('');
+                }
+            }
+            
+            password.addEventListener('input', validatePassword);
+            confirmPassword.addEventListener('input', validatePassword);
+            
+            form.addEventListener('submit', function(e) {
+                validatePassword();
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
